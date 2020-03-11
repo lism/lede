@@ -30,7 +30,7 @@ jobs:
         lfs: true
 
     - name: Set git identity
-      run : |
+      run: |
         git config --global user.email "cn.lism@gmail.com"
         git config --global user.name "lism"
 
@@ -42,8 +42,8 @@ jobs:
         DOWNSTREAM_BRANCH: master
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        #git remote set-url origin https://lism:$GITHUB_TOKEN@github.com/lism/lede.git
-        #git push origin $DOWNSTREAM_BRANCH
+        # git remote set-url origin https://lism:$GITHUB_TOKEN@github.com/lism/lede.git
+        # git push origin $DOWNSTREAM_BRANCH
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         git commit -am "Automated merge"
         git push origin $DOWNSTREAM_BRANCH
