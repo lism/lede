@@ -46,4 +46,4 @@ jobs:
         #git push origin $DOWNSTREAM_BRANCH
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         git commit -am "Automated merge"
-        git push
+        git push origin $DOWNSTREAM_BRANCH
