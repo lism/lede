@@ -24,8 +24,8 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@
-      with
-        ref: mast
+      with:
+        ref: master
         fetch-depth: 0
         lfs: true
 
