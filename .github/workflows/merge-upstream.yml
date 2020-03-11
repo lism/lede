@@ -23,9 +23,9 @@ jobs:
     steps:
 
     - name: Checkout
-      uses: actions/checkout@master
-      with:
-        ref: master
+      uses: actions/checkout@
+      with
+        ref: mast
         fetch-depth: 0
         lfs: true
 
@@ -41,4 +41,5 @@ jobs:
       env:
         DOWNSTREAM_BRANCH: master
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: git push origin $DOWNSTREAM_BRANCH
+      #run: git push origin $DOWNSTREAM_BRANCH
+      run: git remote set-url --push origin $DOWNSTREAM_BRANCH https://lism:$GITHUB_TOKEN@github.com/lism/lede
