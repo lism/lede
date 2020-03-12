@@ -44,6 +44,7 @@ jobs:
       run: |
         # git remote set-url origin https://lism:$GITHUB_TOKEN@github.com/lism/lede.git
         # git push origin $DOWNSTREAM_BRANCH
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/${{ github.repository }}
         # git commit -am "Automated merge"
         git push --force origin $DOWNSTREAM_BRANCH
